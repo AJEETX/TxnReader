@@ -14,7 +14,7 @@ namespace codeChallenge
             return new Transaction
             {
                 TransactionId=txnData[0],
-                FromAccountId=txnData[1],
+                FromAccountId=txnData[1].Trim(),
                 ToAccountId=txnData[2],
                 CreatedAt=DateTime.Parse(txnData[3]),
                 Amount=Convert.ToDecimal(txnData[4]),
