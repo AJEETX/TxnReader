@@ -22,9 +22,9 @@ namespace codeChallenge
             //if(args.Length!=3) return result;
 
             var input=new Input{
-                        AccountId= "ACC334455",//args[0],
-                        From=DateTime.Parse("20/10/2018 12:00:00"),
-                        To=DateTime.Parse("20/10/2018 19:00:00")};
+                        AccountId= args[0],
+                        From=DateTime.Parse(args[1]),
+                        To=DateTime.Parse(args[2])};
             try{
 
                 var transactions=_transactionDataProvider.GetTransactions();
