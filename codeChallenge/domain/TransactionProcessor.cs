@@ -18,7 +18,7 @@ namespace codeChallenge
                  txn.FromAccountId==input.AccountId && txn.CreatedAt>=input.From && txn.CreatedAt<=input.To);
                 foreach(var r in result)
                 {
-                    output.RelativeBalance+=r.Amount;
+                    output.RelativeBalance-=r.Amount;
                     output.NoOfTransaction++;
                 }
             
