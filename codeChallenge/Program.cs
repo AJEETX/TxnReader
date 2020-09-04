@@ -7,13 +7,7 @@ namespace codeChallenge
     {
         public static void Main(string[] args)
         {
-            var services = new ServiceCollection();
-            services.AddSingleton<ITransactionManager, TransactionManager>();
-            services.AddSingleton<ITransactionDataProvider, TransactionDataProvider>();
-            services.AddSingleton<ITransactionDataFormatter, TransactionDataFormatter>();
-            services.AddSingleton<ITransactionProcessor, TransactionProcessor>();
-
-           IServiceProvider Provider = services.BuildServiceProvider();
+            var Provider = DependencyInjection.SetDependency();
             var data=Provider.GetRequiredService<ITransactionManager>().ProcessRequest(new Input());
             Console.WriteLine("Relative balance for the period is: "+data.RelativeBalance);
             Console.WriteLine("Number of transactions included is: "+data.RelativeBalance);
