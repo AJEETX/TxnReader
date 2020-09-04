@@ -18,8 +18,8 @@ namespace codeChallenge
                 ToAccountId=txnData[2],
                 CreatedAt=DateTime.Parse(txnData[3]),
                 Amount=Convert.ToDecimal(txnData[4]),
-                TransactionType=txnData[5],
-                RelatedTransaction=txnData[5].Trim().ToLowerInvariant()=="reversal"?txnData[6]:string.Empty
+                TransactionType=txnData[5].Trim(),
+                RelatedTransaction=txnData[5].Trim().ToLowerInvariant()=="reversal"?txnData[6].Trim():string.Empty
             };
         }
     }
