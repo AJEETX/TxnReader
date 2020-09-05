@@ -19,17 +19,13 @@ namespace codeChallenge
         {
             Output result=default;
 
-            //if(args.Length!=3) return result;
+            if(args.Length!=5) return result;
 
-            var input=new Input{
-                        AccountId= args[0],
-                        From=DateTime.Parse(args[1]),
-                        To=DateTime.Parse(args[2])};
             try{
 
                 var transactions=_transactionDataProvider.GetTransactions();
 
-                result= _transactionProcessor.ExtractTransaction(transactions,input);
+                result= _transactionProcessor.ExtractTransaction(transactions,args);
             }
             catch
             {

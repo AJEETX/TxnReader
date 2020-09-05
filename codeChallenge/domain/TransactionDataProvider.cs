@@ -19,8 +19,10 @@ namespace codeChallenge
         }
         public IEnumerable<Transaction> GetTransactions()
         {
-            string path = @"Input.txt";
+            string path = @"transactions.csv";
+
             var rawTxnData=File.ReadAllLines(path).ToList();
+
             for(int i=1; i<rawTxnData.Count;i++)
             {
                  yield return _transactionDataFormatter.GetTransaction(rawTxnData[i]);

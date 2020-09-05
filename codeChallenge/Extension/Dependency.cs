@@ -12,6 +12,7 @@ namespace codeChallenge
             services.AddSingleton<ITransactionDataProvider, TransactionDataProvider>();
             services.AddSingleton<ITransactionDataFormatter, TransactionDataFormatter>();
             services.AddSingleton<ITransactionProcessor, TransactionProcessor>();
+            services.AddSingleton<IInputFormatter, InputFormatter>();
 
            return services.BuildServiceProvider();
         }
