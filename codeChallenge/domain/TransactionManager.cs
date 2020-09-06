@@ -1,5 +1,3 @@
-using System;
-
 namespace codeChallenge
 {
     public interface ITransactionManager

@@ -24,11 +24,11 @@ namespace codeChallenge
                  txn.FromAccountId==input.AccountId && txn.CreatedAt>=input.From && txn.CreatedAt<=input.To);
             
             var output=new Output{
-                RelativeBalance=result.Sum(r=>-r.Amount),
+                RelativeBalance=result.Sum(r=>r.FromAccountId==input.AccountId? -r.Amount:r.Amount),
                 NoOfTransaction=result.Count()
             };
             
-            return output;;
+            return output;
         }
     }
 }
